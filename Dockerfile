@@ -15,7 +15,15 @@ RUN apt-get update && apt-get install -y \
  && chmod +x /gtkada-community-2019-20190523-x86_64-linux-bin/install.sh \
  && cd gtkada-community-2019-20190523-x86_64-linux-bin \
  && ./install.sh \
+ && curl -sSLf https://github.com/onox/inotify-ada/archive/v1.0.0.tar.gz \
+  --output /tmp/v1.0.0.tar.gz \
+ && tar -xf /tmp/v1.0.0.tar.gz \
+ && cd /tmp/inotify-ada-1.0.0 \
+ && make \
+ && make install PREFIX=/opt/gnat \
  && cd / \
+ && rm -r /tmp/inotify-ada-1.0.0 \
+ && rm /tmp/v1.0.0.tar.gz
  && find /opt/gnat/ -type d -empty -delete \
  && rm -rf /tmp/gtkada-community-2019-20190523-x86_64-linux-bin.tar.gz \
  && rm -rf gtkada-community-2019-20190523-x86_64-linux-bin \
