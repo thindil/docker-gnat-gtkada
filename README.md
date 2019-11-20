@@ -3,3 +3,4 @@
 This is docker image with GNAT GPL installed in /opt/gnat/
 - Without GPS IDE
 - With GTKAda
+- With inotify-ada
