@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
  libice-dev \
  && curl -sSLf https://github.com/onox/inotify-ada/archive/v1.0.0.tar.gz \
   --output /tmp/v1.0.0.tar.gz \
- && cd /tmp
+ && cd /tmp \
  && tar -xf v1.0.0.tar.gz \
  && cd inotify-ada-1.0.0 \
  && make \
