@@ -8,16 +8,6 @@ RUN apt-get update && apt-get install -y \
  libxrender-dev \
  libsm-dev \
  libice-dev \
- && curl -sSLf https://github.com/onox/inotify-ada/archive/v1.0.0.tar.gz \
-  --output /tmp/v1.0.0.tar.gz \
- && cd /tmp \
- && tar -xf v1.0.0.tar.gz \
- && cd inotify-ada-1.0.0 \
- && make \
- && make install PREFIX=/opt/gnat \
- && cd / \
- && rm -r /tmp/inotify-ada-1.0.0 \
- && rm /tmp/v1.0.0.tar.gz \
  && curl -sSf http://mirrors.cdn.adacore.com/art/5ce8274a09dcd01acedc1ae3 \
   --output /tmp/gtkada-community-2019-20190523-x86_64-linux-bin.tar.gz \
  && tar -xf /tmp/gtkada-community-2019-20190523-x86_64-linux-bin.tar.gz \
